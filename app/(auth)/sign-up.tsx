@@ -10,6 +10,7 @@ import { ScrollView, Text, View, Image, Alert } from "react-native";
 
 const SignUp = () => {
     const { isLoaded, signUp, setActive } = useSignUp();
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const [form, setForm] = useState({
         name: '',
@@ -110,9 +111,9 @@ const SignUp = () => {
 
                 <ReactNativeModal 
                     isVisible={verification.state === "pending"}
-                    onModalHide={() =>
-                        setVerification({...verification, state: "success"})
-                    }
+                    onModalHide={() => {
+                        if(verification.state === 'success') setShowSuccessModal(true)
+                    }}
                 >
                     <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
                         <Text className="text-2xl font-JakartaExtraBold mb-2">
@@ -140,7 +141,7 @@ const SignUp = () => {
                     
                 </ReactNativeModal>
 
-                <ReactNativeModal isVisible={verification.state === 'success'}>
+                <ReactNativeModal isVisible={showSuccessModal}>
                     <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
                         <Image
                             source={images.check}
@@ -152,7 +153,10 @@ const SignUp = () => {
                         <Text className="text-base text-gray-400 font-Jakarta text-center mt-2">
                             You have successfully verified your account.
                         </Text>
-                        <CustomButton title="Browse Home" onPress={() => router.replace("/(root)/(tabs)/home")}
+                        <CustomButton title="Browse Home" onPress={() => {
+                            setShowSuccessModal(false);
+                            router.push("/(root)/(tabs)/home");
+                        }}    
                         className="mt-5"/>
                     </View>
                 </ReactNativeModal>
