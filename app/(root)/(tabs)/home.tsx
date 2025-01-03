@@ -3,11 +3,12 @@ import Map from '@/components/Map';
 import RideCard from '@/components/RideCard';
 import { icons, images } from '@/constants';
 import { useLocationStore } from '@/store';
-import { SignedIn, useUser } from '@clerk/clerk-expo'
+import { SignedIn, useAuth, useUser } from '@clerk/clerk-expo'
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Location from "expo-location";
+import { router } from 'expo-router';
 
 const recentRides = [
     {
@@ -110,12 +111,18 @@ const recentRides = [
 export default function Page() {
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { user } = useUser()
+  // const { signOut } = useAuth();
   const loading = true;
 
   const [hasPermissions, setHasPermissions] = useState(false);
 
-  const handleSignOut = () => {};
-  const handleDestinationPress = () => {};
+  const handleSignOut = () => {
+    // signOut();
+  };
+  const handleDestinationPress = (location: {latitude: number, longitude: number, address: string}) => {
+    setDestinationLocation(location);
+    router.push('/(root)/find-ride');
+  };
 
   useEffect(() => {
     const requestLocation = async () => {
@@ -134,10 +141,10 @@ export default function Page() {
     });
 
     setUserLocation({
-      // latitude: location.coords.latitude,
-      // longitude: location.coords.longitude,
-      latitude: 37.78825,
-      longitude: -122.4324,
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+      // latitude: 37.78825,
+      // longitude: -122.4324,
       address: `${address[0].name}, ${address[0].region}`,
     });
   };

@@ -9,16 +9,14 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash-screen.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#2F80ED" 
+      "resizeMode": "contain"
     },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "splash": {
         "image": "./assets/images/splash-screen.png",
-        "resizeMode": "contain",
-        "backgroundColor": "#2f80ed"
+        "resizeMode": "contain"
       }
     },    
     "android": {
