@@ -45,12 +45,51 @@
 
 ## Main Screens
 1. **Onboarding Screen**: Guides users through registration and app setup.
+
+<div style="text-align: center;">
+<img src="./images-demo/onboarding1.png" alt="Homepage" width="200"/>
+<img src="./images-demo/onboarding2.png" alt="Homepage" width="200"/>
+</div>
+
 2. **Login Screen**: Allows secure login using email/password or Google OAuth.
+
+<div style="text-align: center;">
+<img src="./images-demo/signIn.png" alt="Homepage" width="200"/>
+<img src="./images-demo/signUp.png" alt="Homepage" width="200"/>
+</div>
+
 3. **Home Screen**: Displays live location and recent rides with map integration.
+
+<div style="text-align: center;">
+<img src="./images-demo/home1.png" alt="Homepage" width="200"/>
+<img src="./images-demo/home2.png" alt="Homepage" width="200"/>
+</div>
+
 4. **Ride Search Screen**: Enables users to search and confirm rides.
+
+<div style="text-align: center;">
+<img src="./images-demo/rider1.png" alt="Homepage" width="200"/>
+<img src="./images-demo/rider2.png" alt="Homepage" width="200"/>
+</div>
+
 5. **Payment Screen**: Facilitates secure payments via Stripe.
+
+<div style="text-align: center;">
+<img src="./images-demo/payment.png" alt="Homepage" width="200"/>
+<img src="./images-demo/successful.png" alt="Homepage" width="200"/>
+</div>
+
 6. **Profile Screen**: Manages user details and account settings.
+
+<div style="text-align: center;">
+<img src="./images-demo/profile.png" alt="Homepage" width="200"/>
+</div>
+
 7. **History Screen**: Displays a detailed history of all past rides.
+
+<div style="text-align: center;">
+<img src="./images-demo/rides.png" alt="Homepage" width="200"/>
+</div>
 
 ## Requirements
 - Node.js **16.x** or later
