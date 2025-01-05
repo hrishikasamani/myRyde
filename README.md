@@ -1,50 +1,137 @@
-# Welcome to your Expo app 👋
+# myRyde Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**myRyde** is a cross-platform ride-booking app built using React Native and Expo. It provides users with a seamless experience for finding and booking rides, managing profiles, and making secure payments. The app is designed to be responsive on both Android and iOS, offering a feature-rich and intuitive interface.
 
-## Get started
+## Table of Contents
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Main Screens](#main-screens)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
 
-1. Install dependencies
+## Tech Stack
+![React Native](https://img.shields.io/badge/React_Native-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
+![Expo](https://img.shields.io/badge/Expo-000000.svg?style=for-the-badge&logo=expo&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-008CDD.svg?style=for-the-badge&logo=stripe&logoColor=white)
+![Clerk](https://img.shields.io/badge/Clerk-000000.svg?style=for-the-badge&logo=clerk&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![zustand](https://img.shields.io/badge/zustand-181717.svg?style=for-the-badge&logo=github&logoColor=white)
+![Google Maps](https://img.shields.io/badge/Google_Maps-4285F4.svg?style=for-the-badge&logo=google-maps&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-   ```bash
-   npm install
-   ```
+## Features
+- **Onboarding**: Seamless user registration and setup process.
+- **Authentication & Authorization**:
+  - Email and password login with email verification.
+  - OAuth login using Google credentials.
+  - Role-based secure access control.
+- **Home Screen**:
+  - Real-time location tracking displayed on a Google Map.
+  - Interactive map markers for enhanced user experience.
+- **Ride Management**:
+  - View recent rides.
+  - Google Places Autocomplete for effortless location search.
+  - Find rides by entering 'From' and 'To' locations.
+  - Select available rides from the map.
+  - Confirm ride details, including time and fare price.
+- **Payments**:
+  - Secure payments via Stripe integration.
+  - Book rides after successful payment.
+- **Profile Management**: Update and manage account details in the profile section.
+- **Ride History**: Access a complete history of all booked rides.
+- **Cross-Platform Compatibility**: Optimized for both Android and iOS devices.
 
-2. Start the app
+## Main Screens
+1. **Onboarding Screen**: Guides users through registration and app setup.
+2. **Login Screen**: Allows secure login using email/password or Google OAuth.
+3. **Home Screen**: Displays live location and recent rides with map integration.
+4. **Ride Search Screen**: Enables users to search and confirm rides.
+5. **Payment Screen**: Facilitates secure payments via Stripe.
+6. **Profile Screen**: Manages user details and account settings.
+7. **History Screen**: Displays a detailed history of all past rides.
 
-   ```bash
-    npx expo start
-   ```
+## Requirements
+- Node.js **16.x** or later
+- Expo CLI **6.0** or later
+- PostgreSQL **13.0** or later
+- Stripe account for payment integration
+- Google Maps API key
 
-In the output, you'll find options to open the app in a
+## Installation
+To set up this project on your local machine, follow these steps:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Clone the Repository
 ```bash
-npm run reset-project
+git clone https://github.com/hrishikasamani/myRyde
+cd myRyde
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
+Install the required dependencies using npm or yarn:
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn more
+### 3. Configure Environment Variables
+Create a `.env` file in the root directory and add the following:
+```bash
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=....
+EXPO_PUBLIC_PLACES_API_KEY=....
+EXPO_PUBLIC_DIRECTIONS_API_KEY=....
+DATABASE_URL=your_postgresql_database_url
+EXPO_PUBLIC_SERVER_URL=https://uber.dev/
+EXPO_PUBLIC_GEOAPIFY_API_KEY=....
+EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_api_key
+STRIPE_SECRET_KEY=....
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4. Start the Development Server
+Run the app using Expo:
+```bash
+expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 5. Run the App on Android or iOS
+For Android, use the following command:
+```bash
+expo run:android
+```
 
-## Join the community
+For iOS, use the following command:
+```bash
+expo run:ios
+```
 
-Join our community of developers creating universal apps.
+### 6. Build for Production
+To build the app for production, run the following command:
+```bash
+expo build:android
+or
+expo build:ios
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 7. Test the App
+You can test the app by scanning the QR code displayed in the terminal using the Expo Go app on your device or using an emulator.
+
+
+## Usage
+
+1. Register or log in using email/password or Google OAuth.
+2. Search for rides by entering 'From' and 'To' locations.
+3. Select and confirm rides using the map interface.
+4. Make secure payments via Stripe to book your ride.
+5. Manage your account and view ride history in the Profile section.
+
+## Contact
+
+If you have any questions, feel free to reach out to me or submit a pull request on this repository:
+
+*Hrishika Samani*
+  [LinkedIn](https://www.linkedin.com/in/hrishika-samani)
+  [Email](mailto:samani.hr@northeastern.edu)
+
+
